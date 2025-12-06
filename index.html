@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceTracker — Personal Finance Manager</title>
+    <meta name="description" content="A simple, professional personal finance tracker to log income, expenses, and view monthly summaries with charts.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h1>FinanceTracker</h1>
+                </div>
+                <button class="btn btn-secondary" id="exportBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Export CSV
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Stats Cards -->
+            <section class="stats-grid">
+                <div class="stat-card stat-income">
+                    <div class="stat-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="19" x2="12" y2="5"></line>
+                            <polyline points="5 12 12 5 19 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Income</span>
+                        <span class="stat-value" id="totalIncome">₹0.00</span>
+                    
+                    </div>
+                </div>
+                <div class="stat-card stat-expense">
+                    <div class="stat-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <polyline points="19 12 12 19 5 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Expenses</span>
+                        <span class="stat-value" id="totalExpenses">₹0.00</span>
+                    </div>
+                </div>
+                <div class="stat-card stat-balance">
+                    <div class="stat-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Current Balance</span>
+                        <span class="stat-value" id="currentBalance">₹0.00</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="content-grid">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Transaction Form -->
+                    <section class="card">
+                        <h2 class="card-title">Add Transaction</h2>
+                        <form id="transactionForm">
+                            <div class="form-group">
+                                <label>Type</label>
+                                <div class="toggle-group">
+                                    <button type="button" class="toggle-btn active" data-type="expense">Expense</button>
+                                    <button type="button" class="toggle-btn" data-type="income">Income</button>
+                                </div>
+                                <input type="hidden" id="transactionType" value="expense">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="amount">Amount</label>
+                                    <input type="number" id="amount" placeholder="0.00" step="0.01" min="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category">Category</label>
+                                    <select id="category" required>
+                                        <option value="">Select category</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description (optional)</label>
+                                <input type="text" id="description" placeholder="Enter description...">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Add Transaction
+                            </button>
+                        </form>
+                    </section>
+
+                    <!-- Charts -->
+                    <section class="card">
+                        <h2 class="card-title">Expenses by Category</h2>
+                        <div class="chart-container">
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+                        <div id="categoryLegend" class="chart-legend"></div>
+                    </section>
+
+                    <section class="card">
+                        <h2 class="card-title">Monthly Overview</h2>
+                        <div class="chart-container chart-container-bar">
+                            <canvas id="monthlyChart"></canvas>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column - Transactions -->
+                <div class="right-column">
+                    <section class="card">
+                        <div class="transactions-header">
+                            <h2 class="card-title">Recent Transactions</h2>
+                            <div class="filter-group">
+                                <select id="filterCategory">
+                                    <option value="">All Categories</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="transactionsList" class="transactions-list">
+                            <p class="empty-state">No transactions yet. Add your first transaction above!</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
