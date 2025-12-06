@@ -1,4 +1,6 @@
-FinanceTracker is a modern, minimalist personal finance manager built with HTML, CSS, and JavaScript. It allows users to track income and expenses, categorize transactions, view monthly summaries, and export financial data to CSV. Designed for simplicity and usability, it provides clear visualizations through charts and a responsive interface.
+FinanceTracker is a modern, minimalist personal finance manager built with HTML, CSS, and JavaScript. 
+It allows users to track income and expenses, categorize transactions, view monthly summaries, and export financial data to CSV. 
+Designed for simplicity and usability, it provides clear visualizations through charts and a responsive interface.
 
 Features:
 Income and Expense Tracking: Log daily income and expenses with categories, dates, and optional descriptions.
