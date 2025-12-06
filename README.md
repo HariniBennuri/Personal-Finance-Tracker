@@ -35,34 +35,31 @@ Designed for simplicity and usability, it provides clear visualizations through 
 ## Categories
 
 ### Expense Categories:
-
--Expense Categories:
 food, Food & Dining, 🍽️, transport, Transportation, 🚗, utilities, Utilities, 💡, entertainment, Entertainment, 🎬, shopping, Shopping, 🛍️, health, Healthcare, 🏥, education, Education, 📚, other_expense, Other, 📦
 
-
--Income Categories:
+### Income Categories:
 salary, Salary, 💼, freelance, Freelance, 💻, investments, Investments, 📈, gifts, Gifts, 🎁, other_income, Other, 💰
 
 
 
 ## Usage
 
-1)Adding a Transaction
+-1)Adding a Transaction
 Select Expense or Income.
 Enter the amount, category, date, and an optional description.
 Click Add Transaction to save.
 
-2)Viewing Stats
+-2)Viewing Stats
 Total Income, Total Expenses, and Current Balance are displayed at the top.
 
-3)Charts
+-3)Charts
 Expenses by Category: Visualizes total spending in each category.
 Monthly Overview: Displays a bar chart comparing monthly income and expenses.
 
-4)Filtering Transactions
+-4)Filtering Transactions
 Use the category dropdown above recent transactions to filter by category.
 
-5)Exporting Data
+-5)Exporting Data
 Click the Export CSV button in the header to download all transaction data as a CSV file.
 
 
