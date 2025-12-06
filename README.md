@@ -15,7 +15,7 @@ Responsive Design: Works across desktop, tablet, and mobile devices.
 Persistent Storage: Data is saved in the browser's localStorage for persistence across sessions.
 Minimalist UI: Modern and clean design with smooth hover effects and color-coded categories.
 
-Tech Stack:
+******Tech Stack*********:
 HTML5 for structure
 CSS3 with custom variables for theming and responsive design
 JavaScript (ES6) for dynamic functionality
@@ -24,30 +24,18 @@ LocalStorage API for storing transaction data
 
 
 
-Categories
-Expense Categories
-Value	                         Label	              Icon
-food	                         Food & Dining	      🍽️
-transport	                     Transportation	      🚗
-utilities	                     Utilities	          💡
-entertainment	                 Entertainment	      🎬
-shopping	                     Shopping	            🛍️
-health	                       Healthcare	          🏥
-education	                     Education	          📚
-other_expense	                 Other	              📦
+*****Categories******:
+
+Expense Categories:
+food, Food & Dining, 🍽️, transport, Transportation, 🚗, utilities, Utilities, 💡, entertainment, Entertainment, 🎬, shopping, Shopping, 🛍️, health, Healthcare, 🏥, education, Education, 📚, other_expense, Other, 📦
 
 
 Income Categories
-Value	                         Label	              Icon
-salary	                       Salary	              💼
-freelance	                     Freelance	          💻
-investments	                   Investments	        📈
-gifts	                         Gifts	              🎁
-other_income	                 Other	              💰
+salary, Salary, 💼, freelance, Freelance, 💻, investments, Investments, 📈, gifts, Gifts, 🎁, other_income, Other, 💰
 
 
 
-Usage:
+********Usage*********:
 
 1)Adding a Transaction
 Select Expense or Income.
