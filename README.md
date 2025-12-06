@@ -1,58 +1,51 @@
+# FinanceTracker — Personal Finance Manager
+
 FinanceTracker is a modern, minimalist personal finance manager built with HTML, CSS, and JavaScript. 
 It allows users to track income and expenses, categorize transactions, view monthly summaries, and export financial data to CSV. 
 Designed for simplicity and usability, it provides clear visualizations through charts and a responsive interface.
 
+---
 
-******Features******:
-Income and Expense Tracking: 
-Log daily income and expenses with categories, dates, and optional descriptions.
+## Features
 
-Dynamic Categories: 
-Supports customizable categories with icons for both income and expenses.
+- **Income and Expense Tracking:** Log daily income and expenses with categories, dates, and optional descriptions.
+- **Dynamic Categories:** Supports customizable categories with icons for both income and expenses.
+- **Statistics Overview:** Displays total income, total expenses, and current balance in a visually appealing format.
+- **Charts & Visualizations:**
+  - Doughnut chart for expenses by category.
+  - Bar chart for monthly income vs. expenses (last 6 months).
+- **Filter Transactions:** Filter recent transactions by category.
+- **Export CSV:** Export all transactions as a CSV file for offline tracking.
+- **Responsive Design:** Works across desktop, tablet, and mobile devices.
+- **Persistent Storage:** Data is saved in the browser's localStorage for persistence across sessions.
+- **Minimalist UI:** Modern and clean design with smooth hover effects and color-coded categories.
 
-Statistics Overview: 
-Displays total income, total expenses, and current balance in a visually appealing format.
+---
 
-Charts & Visualizations:
-Doughnut chart for expenses by category.
-Bar chart for monthly income vs. expenses (last 6 months).
+## Tech Stack
 
-Filter Transactions: 
-Filter recent transactions by category.
+- HTML5 for structure  
+- CSS3 with custom variables for theming and responsive design  
+- JavaScript (ES6) for dynamic functionality  
+- Chart.js for interactive charts  
+- LocalStorage API for storing transaction data  
 
-Export CSV: 
-Export all transactions as a CSV file for offline tracking.
+---
 
-Responsive Design: 
-Works across desktop, tablet, and mobile devices.
+## Categories
 
-Persistent Storage: 
-Data is saved in the browser's localStorage for persistence across sessions.
+### Expense Categories:
 
-Minimalist UI: 
-Modern and clean design with smooth hover effects and color-coded categories.
-
-******Tech Stack*********:
-HTML5 for structure
-CSS3 with custom variables for theming and responsive design
-JavaScript (ES6) for dynamic functionality
-Chart.js for interactive charts
-LocalStorage API for storing transaction data
-
-
-
-*****Categories******:
-
-Expense Categories:
+-Expense Categories:
 food, Food & Dining, 🍽️, transport, Transportation, 🚗, utilities, Utilities, 💡, entertainment, Entertainment, 🎬, shopping, Shopping, 🛍️, health, Healthcare, 🏥, education, Education, 📚, other_expense, Other, 📦
 
 
-Income Categories
+-Income Categories:
 salary, Salary, 💼, freelance, Freelance, 💻, investments, Investments, 📈, gifts, Gifts, 🎁, other_income, Other, 💰
 
 
 
-********Usage*********:
+## Usage
 
 1)Adding a Transaction
 Select Expense or Income.
